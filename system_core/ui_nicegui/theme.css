@@ -1,0 +1,610 @@
+/* Audion GUI stylesheet.
+ *
+ * Order here is load-bearing: of two equally specific rules the later one wins.
+ * Themes therefore recur instead of being grouped — a rule sits where the cascade
+ * needs it, not next to its relatives. The banners mark each run so the sequence
+ * can be read. Do not sort them.
+ *
+ * Move a rule only after checking that nothing it crosses sets the same property
+ * at the same specificity on the same element.
+ */
+
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          body {
+            background: var(--audion-bg);
+            color: var(--audion-text);
+            font-family: var(--audion-gui-font);
+            overflow: hidden;
+          }
+          .nicegui-content { padding: 0; height: 100vh; overflow: hidden; }
+          .q-layout,
+          .q-page,
+          .nicegui-content {
+            background: var(--audion-bg) !important;
+            color: var(--audion-text) !important;
+          }
+          .q-textarea textarea { min-height: 0 !important; }
+/* ========================================================================
+   SHELL
+   ======================================================================== */
+          .audion-header {
+            background: var(--audion-header-bg) !important;
+            border-bottom: 1px solid var(--audion-divider);
+            color: var(--audion-header-text) !important;
+          }
+          .audion-header-controls {
+            align-items: center !important;
+            transform: translateY(-11px);
+          }
+          .audion-header-title {
+            transform: translateY(-11px);
+          }
+/* ========================================================================
+   FIELDS
+   ======================================================================== */
+          .audion-theme-select {
+            width: 168px;
+            min-height: 32px !important;
+            height: 32px !important;
+          }
+          .audion-theme-select.q-field,
+          .audion-theme-select .q-field__inner {
+            min-height: 32px !important;
+            height: 32px !important;
+            padding-bottom: 0 !important;
+          }
+          .audion-theme-select .q-field__control {
+            min-height: 32px !important;
+            height: 32px !important;
+            background: transparent !important;
+            padding: 0 8px 0 14px !important;
+            border-radius: var(--border-radius-md) !important;
+          }
+          .audion-theme-select .q-field__marginal,
+          .audion-theme-select .q-field__native,
+          .audion-theme-select .q-field__append {
+            min-height: 32px !important;
+            height: 32px !important;
+            color: var(--audion-button-text) !important;
+            font-size: 13px !important;
+          }
+          .audion-theme-select .q-field__native {
+            align-items: center !important;
+            line-height: 32px !important;
+            padding: 0 0 1px 0 !important;
+          }
+          .audion-theme-select .q-field__control::before {
+            border-color: var(--audion-input-border) !important;
+          }
+          .audion-theme-select .q-field__bottom {
+            display: none !important;
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-shell .text-gray-300,
+          .audion-shell .text-gray-400,
+          .audion-shell .text-gray-500,
+          .audion-dialog .text-gray-300,
+          .audion-dialog .text-gray-400,
+          .audion-dialog .text-gray-500 {
+            color: var(--audion-secondary-text) !important;
+          }
+/* ========================================================================
+   FIELDS
+   ======================================================================== */
+          .q-field__native,
+          .q-field__input,
+          .q-field input,
+          .q-checkbox__label,
+          .q-radio__label {
+            color: var(--audion-text) !important;
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-button {
+            min-height: 30px !important;
+            height: 30px !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            color: var(--audion-button-text) !important;
+            background: transparent !important;
+            border: 1px solid transparent !important;
+          }
+          .audion-button:hover {
+            background: var(--audion-button-hover-bg) !important;
+            border-color: var(--audion-button-hover-border) !important;
+          }
+          .audion-button .q-btn__content {
+            width: 100%;
+            flex-wrap: nowrap !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: var(--audion-button-size);
+            line-height: 1;
+          }
+/* ========================================================================
+   SHELL
+   ======================================================================== */
+          .audion-action {
+            min-height: 30px !important;
+            height: 30px !important;
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+            color: var(--audion-button-text) !important;
+            background: transparent !important;
+            border: 1px solid transparent !important;
+          }
+          .audion-action:hover {
+            background: var(--audion-button-hover-bg) !important;
+            border-color: var(--audion-button-hover-border) !important;
+          }
+          .audion-action .q-btn__content {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: nowrap !important;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: var(--audion-button-size);
+            line-height: 1;
+          }
+          .audion-nav-run-spacer {
+            width: 140px;
+            min-width: 140px;
+          }
+          .audion-nav-run-button {
+            min-width: 140px;
+            max-width: 260px;
+            justify-self: end;
+            font-weight: 700;
+            border: 1px solid var(--audion-button-hover-border) !important;
+            background: color-mix(in srgb, var(--audion-button-hover-background) 54%, transparent 46%) !important;
+          }
+          .audion-nav-run-button .q-btn__content {
+            justify-content: center !important;
+            min-width: 0 !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+          }
+          .audion-operation-row {
+            display: grid;
+            grid-template-columns: 220px minmax(0, 1fr);
+            gap: 16px;
+            align-items: center;
+            width: 100%;
+            min-width: 0;
+            border-bottom: 1px solid var(--audion-divider);
+            padding: 8px 0;
+            overflow: visible;
+          }
+          .audion-operation-button {
+            width: 220px !important;
+            min-width: 220px !important;
+            max-width: 220px !important;
+            justify-self: start;
+            padding-left: 12px !important;
+            padding-right: 12px !important;
+          }
+          .audion-operation-button .q-btn__content {
+            justify-content: flex-start !important;
+            text-align: left !important;
+            min-width: 0 !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+            flex-wrap: nowrap !important;
+          }
+          .audion-operation-button .q-btn__content > span,
+          .audion-operation-button .q-btn__content > div {
+            display: block !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            overflow: hidden !important;
+            text-overflow: ellipsis !important;
+            white-space: nowrap !important;
+            text-align: left !important;
+          }
+          .audion-operation-description {
+            min-width: 0;
+            color: var(--audion-secondary-text);
+            font-size: 14px;
+            line-height: 1.35;
+            white-space: normal;
+            overflow-wrap: anywhere;
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-shell {
+            display: grid;
+            grid-template-columns: minmax(520px, 58%) minmax(360px, 42%);
+            gap: 12px;
+            width: 100vw;
+            max-width: none;
+            height: calc(100vh - 42px);
+            padding: 12px;
+            overflow: hidden;
+          }
+          .audion-pane {
+            min-height: 0;
+            overflow: hidden;
+          }
+          .audion-scroll {
+            min-height: 0;
+            overflow: auto;
+          }
+          .audion-right {
+            display: grid;
+            grid-template-rows: auto minmax(66vh, 1fr);
+            min-height: 0;
+            height: 100%;
+            overflow: hidden;
+          }
+/* ========================================================================
+   SHELL
+   ======================================================================== */
+          .audion-panel {
+            background: var(--audion-panel-bg);
+            border: 1px solid var(--audion-panel-border);
+            border-radius: 8px;
+          }
+/* ========================================================================
+   FIELDS
+   ======================================================================== */
+          .audion-checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+            gap: 10px 14px;
+            align-items: center;
+          }
+          .audion-checkbox-item {
+            box-sizing: border-box;
+            min-width: 0;
+            min-height: 30px !important;
+            margin: 0 !important;
+            padding: 2px 9px 2px 4px !important;
+            background: var(--audion-control-chip) !important;
+            border: 1px solid var(--audion-control-ring) !important;
+            border-radius: 7px !important;
+            transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+          }
+          .audion-checkbox-grid .audion-checkbox-item {
+            width: 100%;
+          }
+          .audion-checkbox-item:is(:hover, :focus-within) {
+            background: var(--audion-control-chip-hover) !important;
+            border-color: var(--audion-input-border-hover) !important;
+          }
+          .audion-checkbox-item[aria-checked="true"],
+          .audion-checkbox-item:has(.q-checkbox__inner--truthy) {
+            background: var(--audion-control-chip-active) !important;
+            border-color: var(--audion-control-ring-active) !important;
+            box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent-primary) 16%, transparent 84%);
+          }
+          .audion-checkbox-item.disabled,
+          .audion-checkbox-item[aria-disabled="true"] {
+            opacity: .44;
+          }
+          .audion-checkbox-item .q-checkbox__label {
+            color: var(--audion-text) !important;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-post-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 14px;
+            align-items: start;
+          }
+          .audion-post-cell {
+            min-width: 0;
+            padding: 6px 8px;
+          }
+          .audion-post-title {
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1.25;
+          }
+          .audion-radio-row {
+            justify-content: center;
+          }
+          .audion-radio-row-left {
+            justify-content: flex-start;
+          }
+          .audion-radio.q-option-group,
+          .audion-radio .q-option-group {
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            row-gap: 14px;
+            column-gap: 8px;
+          }
+          .audion-radio-three.q-option-group {
+            grid-template-columns: repeat(3, max-content);
+          }
+          .audion-radio-two.q-option-group {
+            grid-template-columns: repeat(2, max-content);
+          }
+          .audion-radio .q-radio__label {
+            color: var(--audion-text) !important;
+            font-size: 12px;
+            font-weight: 500;
+            white-space: nowrap;
+          }
+          .audion-radio .q-radio__inner {
+            width: 28px !important;
+            min-width: 28px !important;
+            font-size: 28px !important;
+          }
+          .audion-post-cell .q-radio {
+            margin-bottom: 4px;
+          }
+          .audion-radio.q-option-group .q-radio,
+          .audion-radio .q-option-group .q-radio {
+            box-sizing: border-box;
+            min-height: 30px !important;
+            margin: 0 !important;
+            padding: 2px 8px 2px 2px !important;
+            background: var(--audion-control-chip) !important;
+            border: 1px solid var(--audion-control-ring) !important;
+            border-radius: 999px !important;
+            transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease;
+          }
+          .audion-radio.q-option-group .q-radio:is(:hover, :focus-within),
+          .audion-radio .q-option-group .q-radio:is(:hover, :focus-within) {
+            background: var(--audion-control-chip-hover) !important;
+            border-color: var(--audion-input-border-hover) !important;
+          }
+          .audion-radio.q-option-group .q-radio[aria-checked="true"],
+          .audion-radio .q-option-group .q-radio[aria-checked="true"],
+          .audion-radio.q-option-group .q-radio:has(.q-radio__inner--truthy),
+          .audion-radio .q-option-group .q-radio:has(.q-radio__inner--truthy) {
+            background: var(--audion-control-chip-active) !important;
+            border-color: var(--audion-control-ring-active) !important;
+            box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-accent-primary) 16%, transparent 84%);
+          }
+          .audion-radio.q-option-group .q-radio.disabled,
+          .audion-radio .q-option-group .q-radio.disabled,
+          .audion-radio.q-option-group .q-radio[aria-disabled="true"],
+          .audion-radio .q-option-group .q-radio[aria-disabled="true"] {
+            opacity: .44;
+          }
+          .audion-radio-row-left .q-option-group {
+            justify-content: flex-start;
+          }
+/* ========================================================================
+   FIELDS
+   ======================================================================== */
+          .audion-number .q-field__control,
+          .audion-select .q-field__control {
+            min-height: 38px !important;
+            background: var(--audion-terminal-bg) !important;
+            border-radius: var(--border-radius-md) !important;
+          }
+          .audion-number .q-field__marginal,
+          .audion-number .q-field__append,
+          .audion-select .q-field__marginal,
+          .audion-select .q-field__append {
+            min-height: 38px !important;
+            height: 38px !important;
+            display: flex !important;
+            align-items: center !important;
+            align-self: center !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+          }
+          .audion-number .q-field__append .q-icon,
+          .audion-select .q-field__append .q-icon,
+          .audion-theme-select .q-field__append .q-icon {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            height: 100% !important;
+            line-height: 1 !important;
+            transform: translateY(-1px);
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-number input[type="number"]::-webkit-inner-spin-button,
+          .audion-number input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          .audion-number input[type="number"] {
+            appearance: textfield;
+            -moz-appearance: textfield;
+          }
+          .audion-number-spinner {
+            width: 18px;
+            height: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-right: -2px;
+          }
+          .audion-number-spin-button {
+            width: 18px !important;
+            min-width: 18px !important;
+            height: 12px !important;
+            min-height: 12px !important;
+            padding: 0 !important;
+            border-radius: 3px !important;
+            color: var(--audion-button-text) !important;
+            opacity: 0.92;
+          }
+          .audion-number-spin-button:hover {
+            opacity: 1;
+            color: var(--audion-button-text) !important;
+            background: var(--audion-button-hover-background) !important;
+          }
+          .audion-number-spin-button .q-icon {
+            font-size: 13px !important;
+            line-height: 1 !important;
+          }
+/* ========================================================================
+   FIELDS
+   ======================================================================== */
+          .audion-number .q-field__native,
+          .audion-number input,
+          .audion-select .q-field__native,
+          .audion-select .q-field__input,
+          .audion-select input {
+            font-size: 13px !important;
+          }
+          .audion-select .q-field__input,
+          .audion-select input {
+            caret-color: transparent !important;
+          }
+          .audion-number.q-field--outlined .q-field__control:before,
+          .audion-number.q-field--outlined .q-field__control:after,
+          .audion-select.q-field--outlined .q-field__control:before,
+          .audion-select.q-field--outlined .q-field__control:after {
+            border-style: solid !important;
+            border-color: var(--audion-input-border) !important;
+          }
+          .audion-number.q-field--outlined.q-field--focused .q-field__control:after,
+          .audion-select.q-field--outlined.q-field--focused .q-field__control:after {
+            border-color: var(--audion-input-border-focus) !important;
+          }
+          .audion-number.q-field--outlined:hover .q-field__control:before,
+          .audion-select.q-field--outlined:hover .q-field__control:before {
+            border-color: var(--audion-input-border-hover) !important;
+          }
+          .audion-select-popup {
+            min-width: min(720px, calc(100vw - 48px)) !important;
+            max-width: min(900px, calc(100vw - 32px)) !important;
+            background: var(--audion-panel-bg) !important;
+            border: 1px solid var(--audion-panel-border) !important;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32) !important;
+          }
+          .audion-select-popup .q-item__label {
+            white-space: normal;
+            line-height: 1.25;
+          }
+/* ========================================================================
+   TERMINAL
+   ======================================================================== */
+          .audion-terminal-panel {
+            display: flex;
+            flex-direction: column;
+            background: var(--audion-panel-bg);
+            border: 1px solid var(--audion-terminal-border);
+            border-radius: 8px;
+            min-height: 0;
+            height: 100%;
+            overflow: hidden;
+          }
+          .audion-terminal {
+            flex: 1 1 auto;
+            min-height: 0;
+            height: 100% !important;
+            background: var(--audion-terminal-bg) !important;
+            color: var(--audion-muted-text) !important;
+            font-family: var(--audion-terminal-font) !important;
+            font-size: var(--audion-terminal-size) !important;
+            line-height: var(--audion-terminal-line-height) !important;
+            white-space: pre-wrap;
+            tab-size: 4;
+            overflow-x: hidden;
+            overflow-y: auto;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            max-width: 100%;
+            user-select: text;
+            cursor: text;
+          }
+          .audion-terminal-html {
+            display: block;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 10px 12px;
+            border: 1px solid var(--audion-input-border);
+            border-radius: var(--border-radius-md);
+            color: var(--audion-muted-text) !important;
+            max-width: 100%;
+            overflow-x: hidden;
+          }
+          .audion-terminal-html span {
+            border-radius: 2px;
+          }
+          .audion-terminal-line {
+            display: block;
+            min-height: 1.35em;
+            max-width: 100%;
+            padding-left: 5ch;
+            text-indent: -5ch;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+            user-select: text;
+          }
+          .audion-terminal-line-table {
+            /* A table row keeps its columns: no wrapping, and none of the hanging
+               indent that a continuation line would otherwise be shifted by. The
+               panel scrolls sideways only while such a line is wider than it. */
+            max-width: none;
+            padding-left: 0;
+            text-indent: 0;
+            white-space: pre;
+            overflow-wrap: normal;
+            word-break: normal;
+          }
+/* ========================================================================
+   BASE
+   ======================================================================== */
+          .audion-log-icon-button {
+            width: 30px !important;
+            min-width: 30px !important;
+            height: 30px !important;
+            min-height: 30px !important;
+            padding: 0 !important;
+          }
+          .audion-log-icon-button .q-icon {
+            font-size: 18px !important;
+          }
+/* ========================================================================
+   TERMINAL
+   ======================================================================== */
+          .audion-terminal-footer {
+            flex: 0 0 auto;
+            min-height: 26px;
+            border-top: 1px solid var(--audion-divider);
+            color: var(--audion-muted-text);
+          }
+          .audion-terminal-expanded {
+            height: calc(100vh - 96px) !important;
+          }
+/* ========================================================================
+   RESPONSIVE
+   ======================================================================== */
+          @media (max-width: 900px) {
+            body { overflow: auto; }
+            .nicegui-content { height: auto; overflow: visible; }
+            .audion-shell {
+              display: flex;
+              flex-direction: column;
+              height: auto;
+              overflow: visible;
+            }
+            .audion-post-grid {
+              grid-template-columns: 1fr;
+            }
+          }
+
+        

@@ -1,0 +1,175 @@
+# Tool description for the GUI shell.
+# Описание инструмента для GUI-оболочки.
+tool:
+  # Internal project identifier.
+  # Внутренний идентификатор проекта.
+  id: audion_doc_to_pdf
+  # Display name shown in the interface.
+  # Название, которое отображается в интерфейсе.
+  name: "Audion Doc to PDF"
+  # Tool category.
+  # Категория инструмента.
+  category: "Office Conversion"
+  # Tool/configuration version.
+  # Версия конфигурации/инструмента.
+  version: "1.2.0"
+
+# GUI startup settings.
+# Настройки запуска GUI.
+ui:
+  # Window/page title.
+  # Заголовок окна/страницы.
+  title: "Audion Doc to PDF"
+  # Local GUI host.
+  # Локальный адрес GUI.
+  host: "127.0.0.1"
+  # GUI port.
+  # Порт GUI.
+  port: 8091
+
+# Main GUI operations.
+# Основные операции GUI.
+operations:
+  - id: batch_recursive
+    # English and Russian button title.
+    # Английское и русское название кнопки.
+    title: "Convert Source"
+    title_ru: "Конвертировать Source"
+    # English and Russian operation description.
+    # Английское и русское описание операции.
+    description: "Convert the current Workbench Source to PDF under Target; folders are mirrored recursively."
+    description_ru: "Конвертировать текущий Source из Workbench в PDF под Target; папки зеркалируются рекурсивно."
+    # CLI arguments after python -u.
+    # CLI-аргументы после python -u.
+    args: ["{MAIN_PY}", "batch", "--recursive"]
+    # Optional nested GUI groups shown before launch.
+    # Опциональные вложенные группы GUI, которые показываются перед запуском.
+    option_groups:
+      - id: formats
+        # Checkbox group.
+        # Группа чекбоксов.
+        type: checkboxes
+        title: "Document formats"
+        title_ru: "Форматы документов"
+        description: "Choose which input formats the recursive search should convert."
+        description_ru: "Выберите, какие форматы рекурсивный поиск будет конвертировать."
+        # Require at least one selected item.
+        # Требовать хотя бы один выбранный пункт.
+        min_selected: 1
+        # CLI flag and value separator.
+        # CLI-флаг и разделитель значений.
+        args_prefix: ["--extensions"]
+        separator: ","
+        choices:
+          - id: docx
+            label: "DOCX"
+            label_ru: "DOCX"
+            value: ".docx"
+            default: false
+          - id: pptx
+            label: "PPTX"
+            label_ru: "PPTX"
+            value: ".pptx"
+            default: false
+          - id: xlsx
+            label: "XLSX"
+            label_ru: "XLSX"
+            value: ".xlsx"
+            default: false
+          - id: doc
+            label: "DOC"
+            label_ru: "DOC"
+            value: ".doc"
+            default: false
+          - id: docm
+            label: "DOCM"
+            label_ru: "DOCM"
+            value: ".docm"
+            default: false
+          - id: odt
+            label: "ODT"
+            label_ru: "ODT"
+            value: ".odt"
+            default: false
+          - id: rtf
+            label: "RTF"
+            label_ru: "RTF"
+            value: ".rtf"
+            default: false
+          - id: txt
+            label: "TXT"
+            label_ru: "TXT"
+            value: ".txt"
+            default: false
+          - id: xls
+            label: "XLS"
+            label_ru: "XLS"
+            value: ".xls"
+            default: false
+          - id: xlsm
+            label: "XLSM"
+            label_ru: "XLSM"
+            value: ".xlsm"
+            default: false
+          - id: xlsb
+            label: "XLSB"
+            label_ru: "XLSB"
+            value: ".xlsb"
+            default: false
+          - id: csv
+            label: "CSV"
+            label_ru: "CSV"
+            value: ".csv"
+            default: false
+          - id: ods
+            label: "ODS"
+            label_ru: "ODS"
+            value: ".ods"
+            default: false
+          - id: ppt
+            label: "PPT"
+            label_ru: "PPT"
+            value: ".ppt"
+            default: false
+          - id: pptm
+            label: "PPTM"
+            label_ru: "PPTM"
+            value: ".pptm"
+            default: false
+          - id: odp
+            label: "ODP"
+            label_ru: "ODP"
+            value: ".odp"
+            default: false
+
+  - id: crop_pptx
+    title: "Crop PowerPoint PDFs"
+    title_ru: "ОБРЕЗКА PPTX"
+    description: "Crop PowerPoint-exported PDFs under the current Workbench Target to exact 16:9."
+    description_ru: "Обрезать PDF из PowerPoint в текущем Target Workbench до точных 16:9."
+    args: ["{MAIN_PY}", "crop-pptx"]
+
+  - id: crop_pptx_force
+    title: "Force crop"
+    title_ru: "ОБРЕЗКА повторно"
+    description: "Repeat crop even for PDFs marked as already cropped."
+    description_ru: "Повторить обрезку даже для PDF, помеченных как уже обрезанные."
+    args: ["{MAIN_PY}", "crop-pptx", "--force"]
+
+  - id: info
+    title: "Project info"
+    title_ru: "Инфо"
+    description: "Show settings and supported formats."
+    description_ru: "Показать настройки и поддерживаемые форматы."
+    args: ["{MAIN_PY}", "info"]
+    # Extra CLI arguments by GUI language.
+    # Дополнительные CLI-аргументы по языку GUI.
+    language_args:
+      ru: ["--lang", "ru"]
+
+  - id: doctor
+    title: "Environment doctor"
+    title_ru: "Doctor"
+    description: "Check runtime, pypdf, PowerShell, and Office COM."
+    description_ru: "Проверить runtime, pypdf, PowerShell и Office COM."
+    args: ["{DOCTOR_PY}"]

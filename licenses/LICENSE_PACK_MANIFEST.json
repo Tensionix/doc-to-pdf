@@ -1,0 +1,36 @@
+{
+  "schema": "audion.build_licenses.pack_manifest.v1",
+  "generated_utc": "2026-08-24T17:40:17Z",
+  "run_id": "20260824T174009Z_audion-doc-to-pdf_97452791",
+  "project_id": "audion-doc-to-pdf",
+  "project_name": "Audion Doc to PDF",
+  "scan_root": "S:\\Release\\Audion Doc to PDF",
+  "output_dir": "S:\\Release\\Audion Doc to PDF\\licenses",
+  "files": [
+    {
+      "name": "THIRD_PARTY_NOTICES.txt",
+      "sha256": "4cad3284d9d07191eb891ff6d1d7d328e988b82290f75de79cfe6763b1b071bc",
+      "size": 434202
+    },
+    {
+      "name": "SOURCE_CODE_AVAILABILITY.txt",
+      "sha256": "ae5af2e300999c8a1e3fa801e44a0317781fe32069a3f20549f1aff2156e67f9",
+      "size": 1216
+    },
+    {
+      "name": "COMPONENTS.json",
+      "sha256": "b8260821bf0d21eea37ab14ba0285669db407d695d0035ad195fc4c91f062b67",
+      "size": 131096
+    },
+    {
+      "name": "_records.json",
+      "sha256": "a8ab9802205f639e6fbc7e7ed2451a9309d95f249c44788a1d7ebc839cd1c94c",
+      "size": 32395
+    },
+    {
+      "name": "LICENSE_SCAN_REPORT.md",
+      "sha256": "b93d04328dc1a18025275fbc37ce940c1ddcb033d7ec3155f3ef05d3edd7596e",
+      "size": 5030
+    }
+  ]
+}
