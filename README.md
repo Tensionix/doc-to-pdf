@@ -8,7 +8,7 @@
 - [Direct download](https://audion.dev/get/doc-to-pdf/1.6.1/Audion_Doc_to_PDF_v1.6.1_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/doc-to-pdf) — every version and how to install
 
-![The program window](docs/screenshot.png)
+<img src="docs/screenshot.png" alt="The program window" width="560">
 
 `SHA-256: 79187aa82ff17320b8817a7d28e04afbc62ecdbb4e516a01698a0f9393e3bf4f`
 
