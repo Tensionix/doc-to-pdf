@@ -1,14 +1,19 @@
 # Audion Doc to PDF
 
 <!-- audion:release -->
-[![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white)](https://audion.dev/downloads/doc-to-pdf) [![Release](https://img.shields.io/github/v/release/Tensionix/doc-to-pdf?style=flat-square&label=release&color=e08a63)](https://github.com/Tensionix/doc-to-pdf/releases/latest) [![Downloads](https://img.shields.io/github/downloads/Tensionix/doc-to-pdf/total?style=flat-square&label=downloads&color=5fd08a)](https://github.com/Tensionix/doc-to-pdf/releases) [![License](https://img.shields.io/github/license/Tensionix/doc-to-pdf?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600)](https://github.com/Tensionix/doc-to-pdf/blob/main/LICENSE)
+<p align="center">
+  <a href="https://audion.dev/downloads/doc-to-pdf"><img alt="Windows" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0b6db8?style=flat-square&logo=windows&logoColor=white"></a>
+  <a href="https://github.com/Tensionix/doc-to-pdf/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/Tensionix/doc-to-pdf?style=flat-square&label=release&color=e08a63"></a>
+  <a href="https://github.com/Tensionix/doc-to-pdf/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/Tensionix/doc-to-pdf/total?style=flat-square&label=downloads&color=5fd08a"></a>
+  <a href="https://github.com/Tensionix/doc-to-pdf/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/doc-to-pdf?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
+</p>
 
 **Version 1.6.1** · 2026-08-25 · 182.1 MB
 
 - [Direct download](https://audion.dev/get/doc-to-pdf/1.6.1/Audion_Doc_to_PDF_v1.6.1_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/doc-to-pdf) — every version and how to install
 
-<img src="docs/screenshot.png" alt="The program window" width="560">
+<p align="center"><img src="docs/screenshot.png" alt="The program window" width="560"></p>
 
 `SHA-256: 79187aa82ff17320b8817a7d28e04afbc62ecdbb4e516a01698a0f9393e3bf4f`
 
