@@ -8,92 +8,72 @@
   <a href="https://github.com/Tensionix/doc-to-pdf/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/doc-to-pdf?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 1.6.2** · 2026-09-01 · 3.6 MB
+**Version 1.6.2** · 2026-09-02 · 181.9 MB
 
-- [Direct download](https://dl.audion.dev/doc-to-pdf/1.6.2/Audion_Doc_to_PDF_v1.6.2.zip) — unmetered, no rate limits
+- [Direct download](https://audion.dev/get/doc-to-pdf/1.6.2/Audion_Doc_to_PDF_v1.6.2_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/doc-to-pdf) — every version and how to install
 
 <p align="center"><img src="docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: 9fa236f861d59490b1f836ae763814dd8e1b6099a75ce62e6ec4cc4a975f2db3`
+`SHA-256: c47b58fa31c8a4411a7e61d50c5a5bd34849899a96c4a1c64222b2135d75cd51`
 
 ---
 
 An **Audion** tool, published by [Tensionix](https://github.com/Tensionix).
 <!-- /audion:release -->
 
-Portable Windows tool for batch conversion of Word, Excel, and PowerPoint documents through native Microsoft Office export, plus common processing of ready PDFs.
 
-## Features
+[Русский](README_RU.md) · [User Guide](USER_GUIDE_EN.md)
 
-- recursive folder conversion with mirrored output structure;
-- direct conversion of one Office file;
-- `16:9` or A-series post-crop for presentation exports;
-- presentation content scaling;
-- PDF splitting, aspect/margin cropping, numbering, and content scaling;
-- metadata under `report\latest\metadata` and run archives;
-- shared Source/Target routes across GUI and CLI.
+Batch conversion of Word, Excel, and PowerPoint into PDF — through the native
+export of Office itself. Plus routine processing of existing PDFs.
 
-- Word: `.doc`, `.docx`, `.docm`, `.rtf`, `.txt`, `.odt`
-- Excel: `.xls`, `.xlsx`, `.xlsm`, `.xlsb`, `.csv`, `.ods`
-- PowerPoint: `.ppt`, `.pptx`, `.pptm`, `.odp`
+## Why It Exists
 
-## GUI
+There are a dozen ways to get a PDF out of an Office document, and almost all of
+them spoil the result: third-party engines lose fonts, break numbering, move
+tables elsewhere. The only one that reliably produces what you see on screen is
+Office itself.
 
-Run `launcher_gui.cmd`. The canonical Workbench I/O at the upper left defines direct routes:
+But Office cannot do it in bulk. Opening two hundred files and pressing "Save as
+PDF" two hundred times is not work for a human.
 
-- `Source` is a folder or one Office/PDF file;
-- `Target` is the result folder;
-- source data is not copied into staging or a cache;
-- `input` and `output` remain safe initial values and CLI defaults.
+The program takes that over: **the export stays native**, and the batching is
+added around it.
 
-Path history is local and excluded from Git. Pinning, locking, file/folder selection, list view, reset, and guarded deletion match the other Audion Workbench projects.
+## Principles
 
-See `docs\GUI.md` for the full GUI guide.
+**The folder structure is preserved.** The walk is recursive and the output
+mirrors the source tree. Two hundred files from twenty folders do not collapse
+into one.
 
-## CLI
+**Existing PDFs are processed too.** Not everything comes from Office: some
+material is already PDF and needs the same treatment — cropping to format,
+assembly, splitting.
 
-Convert default `input` to `output`:
+**Presentations are cropped afterwards.** The export produces the page as it is,
+and fitting to `16:9` or an A-series size is a separate step — so the original
+export stays unspoilt.
 
-```bat
-python system_core\main.py batch --recursive --extensions docx,pptx,xlsx
-```
+## What It Can Do
 
-Convert custom folders:
+Recursive folder conversion preserving structure, single-file conversion,
+cropping presentations to `16:9` or A-series, routine processing of existing PDFs.
 
-```bat
-python system_core\main.py batch --recursive --input-dir "D:\DOCS" --output-dir "E:\PDF" --extensions docx,pptx,xlsx
-```
+## Next
 
-Convert one file:
+* [User Guide](USER_GUIDE_EN.md) — step by step.
 
-```bat
-python system_core\main.py file --input "D:\DOCS\report.docx" --output-dir "E:\PDF"
-```
+---
 
-Process one PDF or a folder of PDFs through explicit routes:
+## Technical Reference
 
-```bat
-python system_core\main.py pdf-crop-aspect --mode "16:9" --input-dir "D:\PDF\source.pdf" --output-dir "E:\PDF"
-python system_core\main.py pdf-scale-content --percent 98 --input-dir "D:\PDF" --output-dir "E:\PDF"
-```
+### Requirement
 
-Omitting `--input-dir/--output-dir` preserves the legacy `input -> output` behavior.
+An installed Microsoft Office: it performs the export, the program only drives the
+process.
 
-## Working data
+### Workbench Naming
 
-- `input`, `output`: default routes;
-- `report`: metadata and run archives;
-- `logs`: CLI and GUI logs;
-- `config`: manifest, themes, and settings.
-
-`cleanup_project.cmd` removes only the generated/runtime content declared by that script. Distribution checks include `install\Check-CmdEncoding.cmd` and smoke/doctor commands.
-
-## Requirements
-
-- Windows;
-- installed Microsoft Office desktop applications;
-- the project portable runtime or compatible Python;
-- `pypdf`, `nicegui`, `pyyaml`, `rich`, `pywebview`.
-
-Primary files: `launcher_gui.cmd`, `system_core\main.py`, `system_core\office_export.ps1`, `system_core\ui_nicegui\app.py`, `system_core\ui_nicegui\workbench.py`, `config\tool_manifest.yaml`.
+One shared vocabulary across all Audion projects: **Source**, **Add file…**,
+**Target**, **Reset**, **Delete**, **List**.
