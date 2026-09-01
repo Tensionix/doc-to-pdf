@@ -8,14 +8,14 @@
   <a href="https://github.com/Tensionix/doc-to-pdf/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/Tensionix/doc-to-pdf?style=flat-square&color=5fd08a&logo=apache&logoColor=white&cacheSeconds=3600"></a>
 </p>
 
-**Version 1.6.1** · 2026-08-25 · 182.1 MB
+**Version 1.6.2** · 2026-09-01 · 181.9 MB
 
-- [Direct download](https://audion.dev/get/doc-to-pdf/1.6.1/Audion_Doc_to_PDF_v1.6.1_Full.zip) — unmetered, no rate limits
+- [Direct download](https://dl.audion.dev/doc-to-pdf/1.6.2/Audion_Doc_to_PDF_v1.6.2_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/doc-to-pdf) — every version and how to install
 
 <p align="center"><img src="docs/screenshot.png" alt="The program window" width="560"></p>
 
-`SHA-256: 79187aa82ff17320b8817a7d28e04afbc62ecdbb4e516a01698a0f9393e3bf4f`
+`SHA-256: c47b58fa31c8a4411a7e61d50c5a5bd34849899a96c4a1c64222b2135d75cd51`
 
 ---
 
