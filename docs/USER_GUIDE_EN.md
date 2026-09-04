@@ -1,5 +1,15 @@
 # GUI: Audion Doc to PDF
 
+**Contents**
+
+- [Workbench I/O](#workbench-io)
+- [Conversion](#conversion)
+- [PDF operations](#pdf-operations)
+- [Log and lifecycle](#log-and-lifecycle)
+- [Theme and window](#theme-and-window)
+- [Canonical Workbench labels](#canonical-workbench-labels)
+- [Result Check](#result-check)
+
 The GUI is a control shell over the same CLI. The canonical Workbench I/O and operations are on the left; status, progress, and the streaming log remain on the right.
 
 ## Workbench I/O

@@ -10,7 +10,7 @@
 
 **Version 1.6.2** · 2026-09-04 · 181.9 MB
 
-- [Direct download](https://dl.audion.dev/doc-to-pdf/1.6.2/Audion_Doc_to_PDF_v1.6.2_Full.zip) — unmetered, no rate limits
+- [Direct download](https://audion.dev/get/doc-to-pdf/1.6.2/Audion_Doc_to_PDF_v1.6.2_Full.zip) — unmetered, no rate limits
 - [Project page](https://audion.dev/downloads/doc-to-pdf) — every version and how to install
 
 <p align="center"><img src="docs/screenshot.png" alt="The program window" width="560"></p>
@@ -23,7 +23,17 @@ An **Audion** tool, published by [Tensionix](https://github.com/Tensionix).
 <!-- /audion:release -->
 
 
-[Русский](README_RU.md) · [User Guide](USER_GUIDE_EN.md)
+[Русский](Docs/README_RU.md) · [User Guide](Docs/USER_GUIDE_EN.md)
+
+**Contents**
+
+- [Why It Exists](#why-it-exists)
+- [Principles](#principles)
+- [What It Can Do](#what-it-can-do)
+- [Next](#next)
+- [Technical Reference](#technical-reference)
+  - [Requirement](#requirement)
+  - [Workbench Naming](#workbench-naming)
 
 Batch conversion of Word, Excel, and PowerPoint into PDF — through the native
 export of Office itself. Plus routine processing of existing PDFs.
@@ -62,7 +72,7 @@ cropping presentations to `16:9` or A-series, routine processing of existing PDF
 
 ## Next
 
-* [User Guide](USER_GUIDE_EN.md) — step by step.
+* [User Guide](Docs/USER_GUIDE_EN.md) — step by step.
 
 ---
 

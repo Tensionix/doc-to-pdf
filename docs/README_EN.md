@@ -2,6 +2,16 @@
 
 [Русский](README_RU.md) · [User Guide](USER_GUIDE_EN.md)
 
+**Contents**
+
+- [Why It Exists](#why-it-exists)
+- [Principles](#principles)
+- [What It Can Do](#what-it-can-do)
+- [Next](#next)
+- [Technical Reference](#technical-reference)
+  - [Requirement](#requirement)
+  - [Workbench Naming](#workbench-naming)
+
 Batch conversion of Word, Excel, and PowerPoint into PDF — through the native
 export of Office itself. Plus routine processing of existing PDFs.
 
