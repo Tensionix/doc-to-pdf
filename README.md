@@ -23,7 +23,7 @@ An **Audion** tool, published by [Tensionix](https://github.com/Tensionix).
 <!-- /audion:release -->
 
 
-[Русский](Docs/README_RU.md) · [User Guide](Docs/USER_GUIDE_EN.md)
+[Русский](docs/README_RU.md) · [User Guide](docs/USER_GUIDE_EN.md)
 
 **Contents**
 
@@ -72,7 +72,7 @@ cropping presentations to `16:9` or A-series, routine processing of existing PDF
 
 ## Next
 
-* [User Guide](Docs/USER_GUIDE_EN.md) — step by step.
+* [User Guide](docs/USER_GUIDE_EN.md) — step by step.
 
 ---
 
